@@ -1,1 +1,0 @@
-# predict_diabeties_streamlit

@@ -9,6 +9,7 @@ from pandas_profiling import ProfileReport
 import streamlit.components.v1 as components
 import base64
 import os
+import cv2
 
 
 
@@ -19,6 +20,15 @@ import os
 # parameter_default_values=['6','148','72','35','0','33.6','0.627','50','1']
 
 #CREATING INTERFACE & UI INTERACTIONS
+
+# html = f"<a href='{link}'><img src='data:NBP-Funds-Logo/png;base64,{image_base64}'></a>"
+# st.markdown(html, unsafe_allow_html=True)
+
+
+img= cv2.imread('NBP-Funds-Logo.png',-1)
+
+st.image(img,channels="RGB",width=700)
+
 
 st.markdown("<h1 style='text-align: center; color: Black;'>Analyze Your Data \n\n</h1>", unsafe_allow_html=True)
 st.markdown("<h4 style='text-align: center; color: Green;'>(By Just Your Excel Importing File) \n\n</h4>", unsafe_allow_html=True)

@@ -3,7 +3,11 @@
 
 import streamlit as st
 import pandas as pd
-from sklearn.externals import joblib
+
+#from sklearn.externals import joblib
+import joblib
+
+
 
 #INITIALIZATION OF VARIABLES
 parameter_list=['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age']

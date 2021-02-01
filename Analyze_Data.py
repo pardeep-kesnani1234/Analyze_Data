@@ -33,7 +33,8 @@ st.image(img,channels="RGB",width=700)
 st.markdown("<h1 style='text-align: center; color: Black;'>Analyze Your Data \n\n</h1>", unsafe_allow_html=True)
 st.markdown("<h4 style='text-align: center; color: Green;'>(By Just Your Excel Importing File) \n\n</h4>", unsafe_allow_html=True)
 
-
+option = st.selectbox('Select File Type:',('CSV', 'EXCEL'))
+st.write('You selected:', option)
 
 #filename = st.text_input('Enter a file path:')
 #try:
@@ -63,7 +64,10 @@ def get_binary_file_downloader_html(bin_file, file_label='File'):
 
 uploaded_file = st.file_uploader("Choose a Excel File")
 if uploaded_file is not None:
-  df = pd.read_excel(uploaded_file)
+  if option == 'EXCEL':		
+   	df = pd.read_excel(uploaded_file)
+  elif option == 'CSV':
+    df = pd.read_csv(uploaded_file)
   st.markdown("<h4 style='text-align: center; color: Black;'>Display Sample Data \n\n</h4>", unsafe_allow_html=True)
 
   st.write(df.head())
